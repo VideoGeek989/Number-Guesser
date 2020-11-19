@@ -1,0 +1,24 @@
+function generateTarget() {
+  return Math.floor((Math.random() * 10))
+  }
+function compareGuesses(humanGuess, computerGuess) {
+  const target = generateTarget()
+  const humanError = Math.abs(target - humanGuess)
+  const computerError = Math.abs(target - computerGuess)
+  if (humanError <= computerError) { 
+    return true
+  } else {
+    return false
+  }
+}
+function updateScore(winner) {
+  if (winner == 'human') {
+    humanScore ++
+  } else {
+    computerScore ++
+  }
+}
+function advanceRound() {
+  currentRoundNumber ++  
+}
+console.log(compareGuesses(4, 7))
